@@ -12,7 +12,6 @@ ssh-keygen -t ed25519 -C "uz default"
 
 
 3. Accept the default location of the SSH key and make sure to create passphrase to make the SSH key much more secure to connect master to servers.
-*************
 cat .ssh/id_ed25519.pub (to see the public key)
 
 
@@ -41,9 +40,9 @@ cat .ssh/authorized_keys
 For ansible: ssh -i ~/.ssh/ainsible "server-ip-address" (as we did not create passphrase for ansible it connects automatically)
 For server:  ssh "server-ip-address" (then enter passphrase)
 
+
 9. If I do not want to enter passphrase to connect from Master to server everytime I can edit my .bashrc file and for to alias section and add:
 nano .bashrc
-# ssh agent alias
-alias ssha='eval $(ssh-agent) && ssh-add' (Save and Exit then type ssha on the terminal to connect)
-
-
+###ssh agent alias
+alias ssha='eval $(ssh-agent) && ssh-add'
+(Save and Exit then type ssha on the terminal to connect)
